@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CookshareApplication {
+public class CookShareApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CookshareApplication.class, args);
+		SpringApplication.run(CookShareApplication.class, args);
 	}
 
 }

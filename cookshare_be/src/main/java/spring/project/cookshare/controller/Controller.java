@@ -19,7 +19,9 @@ public class Controller {
     private final IRecipeService recipeService;
 
     @PostMapping
-    public ResponseEntity<Recipe> createRecipe(CreateRecipeRequest request) {
+    public ResponseEntity<Recipe> createRecipe(@RequestBody CreateRecipeRequest request) {
+        System.out.println(request);
+        System.out.println(request.getRecipe() + " " + request.getUser());
         Recipe recipe = recipeService.createRecipe(request);
         return new ResponseEntity<>(recipe, HttpStatus.OK);
     }
@@ -42,5 +44,13 @@ public class Controller {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("/categories")
+    public ResponseEntity<Set<String>> getAllCategories(){
+        return ResponseEntity.ok(recipeService.getAllRecipeCategories());
+    }
 
+    @GetMapping("/cuisines")
+    public ResponseEntity<Set<String>> getAllCuisines(){
+        return ResponseEntity.ok(recipeService.getAllRecipeCuisine());
+    }
 }

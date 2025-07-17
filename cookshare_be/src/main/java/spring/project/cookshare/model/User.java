@@ -24,4 +24,7 @@ public class User {
     @Transient
     private List<Review> reviews;
 
+    public User(String username) {
+        this.username = username;
+    }
 }
